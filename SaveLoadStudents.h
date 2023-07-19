@@ -38,10 +38,10 @@ namespace SaveLoad {
 				getline(stream_line, s_age, delim);
 				getline(stream_line, group, delim);
 
-				Student stud{ name, stoi(s_age), group };
+				Student stud = create_student(name, stoi(s_age), group);
 				students.push_back(stud);
 				// or
-				// students.push_back(Student{ name, stoi(s_age), group });
+				// students.push_back(create_student(name, stoi(s_age), group));
 			}
 
 			stream.close();
@@ -73,6 +73,10 @@ namespace SaveLoad {
 	private:
 		static bool is_exist(const string& path) {
 			return _access(path.c_str(), 6) != -1;
+		}
+
+		static Student create_student(const string& name, int age, const string& group) {
+			return Student(name, age, group);
 		}
 	};
 }
