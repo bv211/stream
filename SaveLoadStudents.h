@@ -7,6 +7,7 @@
 #include "Student.h"
 
 using namespace std;
+using namespace Employee;
 
 namespace SaveLoad {
 	class SaveLoadStudents {
