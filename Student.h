@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace Data {
+namespace Employee {
 	class Student {
 		string _name;
 		int _age;
