@@ -3,51 +3,53 @@
 
 using namespace std;
 
-class Student {
-	string _name;
-	int _age;
-	string _group;
+namespace Data {
+	class Student {
+		string _name;
+		int _age;
+		string _group;
 
-public:
+	public:
 
-	Student(const string& name, int age, const string& group)
-		: _name(name), _age(age), _group(group) {}
+		Student(const string& name, int age, const string& group)
+			: _name(name), _age(age), _group(group) {}
 
-	const string& get_name() const {
-		return _name;
-	}
+		const string& get_name() const {
+			return _name;
+		}
 
-	const int get_age() const {
-		return _age;
-	}
+		const int get_age() const {
+			return _age;
+		}
 
-	const string& get_group() const {
-		return _group;
-	}
+		const string& get_group() const {
+			return _group;
+		}
 
-	Student& set_name(const string name) {
-		_name = name.empty() ? "none" : name;
+		Student& set_name(const string name) {
+			_name = name.empty() ? "none" : name;
 
-		return *this;
-	}
+			return *this;
+		}
 
-	Student& set_age(int age) {
-		_age = age < 0 ? 0 : age;
+		Student& set_age(int age) {
+			_age = age < 0 ? 0 : age;
 
-		return *this;
-	}
+			return *this;
+		}
 
-	Student& set_group(const string group) {
-		_group = group.empty() ? "none" : group;
+		Student& set_group(const string group) {
+			_group = group.empty() ? "none" : group;
 
-		return *this;
-	}
+			return *this;
+		}
 
-	friend ostream& operator<< (ostream& out, const Student& stud) {
-		out << "Name: " << stud._name << endl
-			<< "Age: " << stud._age << endl
-			<< "Group: " << stud._group;
+		friend ostream& operator<< (ostream& out, const Student& stud) {
+			out << "Name: " << stud._name << endl
+				<< "Age: " << stud._age << endl
+				<< "Group: " << stud._group;
 
-		return out;
-	}
-};
+			return out;
+		}
+	};
+}

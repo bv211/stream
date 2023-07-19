@@ -5,6 +5,8 @@
 #include "SaveLoadStudents.h"
 
 using namespace std;
+using namespace Data;
+using namespace SaveLoad;
 
 void print_students(vector<Student>& students) {
 	for (auto& student : students) {
