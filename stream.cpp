@@ -26,25 +26,25 @@ int main() {
 	SetConsoleOutputCP(1251);
 
 	string path{ "file.txt" };
-	vector<Student> _students;
+	vector<Student> students;
 
-	SaveLoadStudents::load_students(path, _students);
+	SaveLoadStudents::load_students(path, students);
 	cout << "--==after load==--" << endl;
-	print_students(_students);
+	print_students(students);
 
-	_students[0]
+	students[0]
 		.set_name("hello")
 		.set_age(12)
 		.set_group("");
 
-	_students[1]
+	students[1]
 		.set_name("")
 		.set_age(32)
 		.set_group("ак228");
 
-	SaveLoadStudents::save_students(path, _students);
+	SaveLoadStudents::save_students(path, students);
 	cout << "\n--==after changed==--" << endl;
-	print_students(_students);
+	print_students(students);
 	// or append
 	// SaveLoadStudents::save_students(path, _students, ios_base::app);
 
